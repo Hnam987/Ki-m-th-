@@ -127,6 +127,7 @@ SELECT @RC = 0,
 
 EXECUTE @RC = [dbo].[USP_GetNumBillByDate] @checkIn, @checkOut;
 
+SELECT @RC AS RC;
 
 </value>
   </data>

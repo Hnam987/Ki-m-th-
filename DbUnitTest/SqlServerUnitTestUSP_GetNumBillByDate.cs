@@ -44,12 +44,6 @@ namespace DbUnitTest
             dbo_USP_GetNumBillByDateTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             rowCountCondition2 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition();
             // 
-            // dbo_USP_GetNumBillByDateTestData
-            // 
-            this.dbo_USP_GetNumBillByDateTestData.PosttestAction = null;
-            this.dbo_USP_GetNumBillByDateTestData.PretestAction = null;
-            this.dbo_USP_GetNumBillByDateTestData.TestAction = dbo_USP_GetNumBillByDateTest_TestAction;
-            // 
             // dbo_USP_GetNumBillByDateTest_TestAction
             // 
             dbo_USP_GetNumBillByDateTest_TestAction.Conditions.Add(rowCountCondition2);
@@ -61,6 +55,12 @@ namespace DbUnitTest
             rowCountCondition2.Name = "rowCountCondition2";
             rowCountCondition2.ResultSet = 1;
             rowCountCondition2.RowCount = 1;
+            // 
+            // dbo_USP_GetNumBillByDateTestData
+            // 
+            this.dbo_USP_GetNumBillByDateTestData.PosttestAction = null;
+            this.dbo_USP_GetNumBillByDateTestData.PretestAction = null;
+            this.dbo_USP_GetNumBillByDateTestData.TestAction = dbo_USP_GetNumBillByDateTest_TestAction;
         }
 
         #endregion
