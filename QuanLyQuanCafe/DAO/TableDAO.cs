@@ -31,6 +31,7 @@ namespace QuanLyQuanCafe.DAO
 
             return result > 0;
         }
+        // update bàn ăn
         public bool UpdateTable(int id, string name, string status)
         {
             string query = string.Format("UPDATE dbo.TableFood SET name = N'{1}', status = N'{2}' WHERE id = {0}",id, name, status);
@@ -38,6 +39,7 @@ namespace QuanLyQuanCafe.DAO
 
             return result > 0;
         }
+        // Xóa Bàn ăn
         public bool DeleteTable(int id)
         {
             
