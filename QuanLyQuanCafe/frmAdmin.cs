@@ -423,9 +423,11 @@ namespace QuanLyQuanCafe
         {
             // TODO: This line of code loads data into the 'QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport' table. You can move, or remove it, as needed.
 
-           // this.USP_GetListBillByDateForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet.USP_GetListBillByDateForReport, dtpkFromDate.Value, dtpkToDate.Value);
+            this.USP_GetListBillByDateForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport, dtpkFromDate.Value, dtpkToDate.Value);
+
+            this.reportViewer1.RefreshReport();
            
-            //this.reportViewer1.RefreshReport();
+            
         }
 
         private void btnShowTable_Click(object sender, EventArgs e)

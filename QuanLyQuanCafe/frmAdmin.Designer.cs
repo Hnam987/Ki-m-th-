@@ -30,11 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.USP_GetListBillByDateForReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.USP_GetListBillByDateForReportTableAdapter = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.panel25 = new System.Windows.Forms.Panel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -126,12 +129,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.QuanLyQuanCafeDataSet = new QuanLyQuanCafe.QuanLyQuanCafeDataSet();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.QuanLyQuanCafeDataSet2 = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2();
             ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).BeginInit();
             this.tpAccount.SuspendLayout();
             this.panel23.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel26.SuspendLayout();
@@ -172,7 +174,7 @@
             this.tcAdmin.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).BeginInit();
-            this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // USP_GetListBillByDateForReportTableAdapter
@@ -207,6 +209,32 @@
             this.panel23.Size = new System.Drawing.Size(285, 349);
             this.panel23.TabIndex = 6;
             this.panel23.Paint += new System.Windows.Forms.PaintEventHandler(this.panel23_Paint);
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.txtPass);
+            this.panel24.Controls.Add(this.label10);
+            this.panel24.Location = new System.Drawing.Point(3, 152);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(279, 44);
+            this.panel24.TabIndex = 5;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(127, 8);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(149, 21);
+            this.txtPass.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.Location = new System.Drawing.Point(3, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(121, 19);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Mật khẩu mới :";
             // 
             // btnResetPassword
             // 
@@ -1133,10 +1161,10 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.USP_GetListBillByDateForReportBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyQuanCafe.Report1.rdlc";
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.USP_GetListBillByDateForReportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyQuanCafe.Report2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(706, 405);
@@ -1147,31 +1175,10 @@
             this.QuanLyQuanCafeDataSet.DataSetName = "QuanLyQuanCafeDataSet";
             this.QuanLyQuanCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel24
+            // QuanLyQuanCafeDataSet2
             // 
-            this.panel24.Controls.Add(this.txtPass);
-            this.panel24.Controls.Add(this.label10);
-            this.panel24.Location = new System.Drawing.Point(3, 152);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(279, 44);
-            this.panel24.TabIndex = 5;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(127, 8);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(149, 21);
-            this.txtPass.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(3, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 19);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Mật khẩu mới :";
+            this.QuanLyQuanCafeDataSet2.DataSetName = "QuanLyQuanCafeDataSet2";
+            this.QuanLyQuanCafeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // frmAdmin
             // 
@@ -1186,6 +1193,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).EndInit();
             this.tpAccount.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -1240,8 +1249,7 @@
             this.tcAdmin.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).EndInit();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1343,11 +1351,12 @@
         private System.Windows.Forms.TabControl tcAdmin;
         private System.Windows.Forms.TabPage tabPage2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private QuanLyQuanCafeDataSet QuanLyQuanCafeDataSet;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label10;
+        private QuanLyQuanCafeDataSet QuanLyQuanCafeDataSet;
+        private QuanLyQuanCafeDataSet2 QuanLyQuanCafeDataSet2;
        // private QuanLyQuanCafe.QuanLyQuanCafeDataSet1 QuanLyQuanCafeDataSet1;
 
     }
