@@ -19,7 +19,7 @@ namespace QuanLyQuanCafe.DAO
         }
 
         private MenuDAO() { }
-
+        // Danh sách menu ban ăn 
         public List<Menu> GetListMenuByTable(int id)
         {
             List<Menu> listMenu = new List<Menu>();
