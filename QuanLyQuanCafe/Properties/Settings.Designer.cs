@@ -6,7 +6,6 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
-//
 //------------------------------------------------------------------------------
 
 namespace QuanLyQuanCafe.Properties {
@@ -31,6 +30,17 @@ namespace QuanLyQuanCafe.Properties {
         public string QuanLyQuanCafeConnectionString {
             get {
                 return ((string)(this["QuanLyQuanCafeConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-DCSFRO1;Initial Catalog=QuanLyQuanCafe;Integrated Security=Tr" +
+            "ue")]
+        public string QuanLyQuanCafeConnectionString1 {
+            get {
+                return ((string)(this["QuanLyQuanCafeConnectionString1"]));
             }
         }
     }

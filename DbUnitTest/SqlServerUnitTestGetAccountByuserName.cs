@@ -10,10 +10,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DbUnitTest
 {
     [TestClass()]
-    public class SqlServerUnitTestInsertBillInfo : SqlDatabaseTestClass
+    public class SqlServerUnitTestGetAccountByuserName : SqlDatabaseTestClass
     {
 
-        public SqlServerUnitTestInsertBillInfo()
+        public SqlServerUnitTestGetAccountByuserName()
         {
             InitializeComponent();
         }
@@ -37,23 +37,23 @@ namespace DbUnitTest
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_USP_InsertBillInfoTest_TestAction;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlServerUnitTestInsertBillInfo));
+            Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction dbo_USP_GetAccountByUserNameTest_TestAction;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlServerUnitTestGetAccountByuserName));
             Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition rowCountCondition1;
-            this.dbo_USP_InsertBillInfoTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
-            dbo_USP_InsertBillInfoTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
+            this.dbo_USP_GetAccountByUserNameTestData = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestActions();
+            dbo_USP_GetAccountByUserNameTest_TestAction = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.SqlDatabaseTestAction();
             rowCountCondition1 = new Microsoft.Data.Tools.Schema.Sql.UnitTesting.Conditions.RowCountCondition();
             // 
-            // dbo_USP_InsertBillInfoTestData
+            // dbo_USP_GetAccountByUserNameTestData
             // 
-            this.dbo_USP_InsertBillInfoTestData.PosttestAction = null;
-            this.dbo_USP_InsertBillInfoTestData.PretestAction = null;
-            this.dbo_USP_InsertBillInfoTestData.TestAction = dbo_USP_InsertBillInfoTest_TestAction;
+            this.dbo_USP_GetAccountByUserNameTestData.PosttestAction = null;
+            this.dbo_USP_GetAccountByUserNameTestData.PretestAction = null;
+            this.dbo_USP_GetAccountByUserNameTestData.TestAction = dbo_USP_GetAccountByUserNameTest_TestAction;
             // 
-            // dbo_USP_InsertBillInfoTest_TestAction
+            // dbo_USP_GetAccountByUserNameTest_TestAction
             // 
-            dbo_USP_InsertBillInfoTest_TestAction.Conditions.Add(rowCountCondition1);
-            resources.ApplyResources(dbo_USP_InsertBillInfoTest_TestAction, "dbo_USP_InsertBillInfoTest_TestAction");
+            dbo_USP_GetAccountByUserNameTest_TestAction.Conditions.Add(rowCountCondition1);
+            resources.ApplyResources(dbo_USP_GetAccountByUserNameTest_TestAction, "dbo_USP_GetAccountByUserNameTest_TestAction");
             // 
             // rowCountCondition1
             // 
@@ -82,9 +82,9 @@ namespace DbUnitTest
 
 
         [TestMethod()]
-        public void dbo_USP_InsertBillInfoTest()
+        public void dbo_USP_GetAccountByUserNameTest()
         {
-            SqlDatabaseTestActions testActions = this.dbo_USP_InsertBillInfoTestData;
+            SqlDatabaseTestActions testActions = this.dbo_USP_GetAccountByUserNameTestData;
             // Execute the pre-test script
             // 
             System.Diagnostics.Trace.WriteLineIf((testActions.PretestAction != null), "Executing pre-test script...");
@@ -104,6 +104,6 @@ namespace DbUnitTest
                 SqlExecutionResult[] posttestResults = TestService.Execute(this.PrivilegedContext, this.PrivilegedContext, testActions.PosttestAction);
             }
         }
-        private SqlDatabaseTestActions dbo_USP_InsertBillInfoTestData;
+        private SqlDatabaseTestActions dbo_USP_GetAccountByUserNameTestData;
     }
 }

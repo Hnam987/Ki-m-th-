@@ -36,6 +36,7 @@ namespace UnitTestCode
              string status = "Het cho";
              bool expected = true;
              Assert.AreEqual(expected, TableDAO.Instance.UpdateTable(id, name, status));
+             //Assert.Fail();
          } // khi update dữ liệu  id âm  ---> cập nhật lại dữ liệu ---> false
          [TestMethod]
          [ExpectedException(typeof(IndexOutOfRangeException))]
@@ -133,7 +134,7 @@ namespace UnitTestCode
              string status = "Trống";
              bool expected = true;
              Assert.AreEqual(expected, TableDAO.Instance.InsertTable(name,status));
-         } // insert thành công 
+         } // insert thành công id tự động , name, status
 
          #endregion
     }

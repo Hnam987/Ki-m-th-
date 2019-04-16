@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.USP_GetListBillByDateForReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.QuanLyQuanCafeDataSet2 = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2();
+            this.USP_GetListBillByDateForReportTableAdapter = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.panel29 = new System.Windows.Forms.Panel();
+            this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.tpTable = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -114,6 +115,7 @@
             this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
             this.txbPageBill = new System.Windows.Forms.TextBox();
             this.btnNextBillPage = new System.Windows.Forms.Button();
             this.btnPrevioursBillPage = new System.Windows.Forms.Button();
@@ -121,12 +123,13 @@
             this.btnFristBillPage = new System.Windows.Forms.Button();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.tcAdmin = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.rpViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.USP_GetListBillByDateForReportTableAdapter = new QuanLyQuanCafe.QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter();
-            this.dtgvAccount = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.QuanLyQuanCafeDataSet = new QuanLyQuanCafe.QuanLyQuanCafeDataSet();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).BeginInit();
             this.tpAccount.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -135,6 +138,7 @@
             this.panel27.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel29.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.tpTable.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -166,19 +170,14 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.tcAdmin.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).BeginInit();
+            this.panel24.SuspendLayout();
             this.SuspendLayout();
             // 
-            // USP_GetListBillByDateForReportBindingSource
+            // USP_GetListBillByDateForReportTableAdapter
             // 
-            this.USP_GetListBillByDateForReportBindingSource.DataMember = "USP_GetListBillByDateForReport";
-            this.USP_GetListBillByDateForReportBindingSource.DataSource = this.QuanLyQuanCafeDataSet2;
-            // 
-            // QuanLyQuanCafeDataSet2
-            // 
-            this.QuanLyQuanCafeDataSet2.DataSetName = "QuanLyQuanCafeDataSet2";
-            this.QuanLyQuanCafeDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.USP_GetListBillByDateForReportTableAdapter.ClearBeforeFill = true;
             // 
             // tpAccount
             // 
@@ -188,7 +187,7 @@
             this.tpAccount.Location = new System.Drawing.Point(4, 24);
             this.tpAccount.Name = "tpAccount";
             this.tpAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAccount.Size = new System.Drawing.Size(650, 411);
+            this.tpAccount.Size = new System.Drawing.Size(712, 411);
             this.tpAccount.TabIndex = 4;
             this.tpAccount.Text = "Tài khoản";
             this.tpAccount.UseVisualStyleBackColor = true;
@@ -198,6 +197,7 @@
             // 
             this.panel23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel23.BackgroundImage")));
             this.panel23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel23.Controls.Add(this.panel24);
             this.panel23.Controls.Add(this.btnResetPassword);
             this.panel23.Controls.Add(this.panel25);
             this.panel23.Controls.Add(this.panel26);
@@ -211,7 +211,7 @@
             // btnResetPassword
             // 
             this.btnResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPassword.Location = new System.Drawing.Point(204, 153);
+            this.btnResetPassword.Location = new System.Drawing.Point(210, 203);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(75, 46);
             this.btnResetPassword.TabIndex = 4;
@@ -377,6 +377,15 @@
             this.panel29.Size = new System.Drawing.Size(349, 343);
             this.panel29.TabIndex = 4;
             // 
+            // dtgvAccount
+            // 
+            this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvAccount.Location = new System.Drawing.Point(3, 0);
+            this.dtgvAccount.Name = "dtgvAccount";
+            this.dtgvAccount.Size = new System.Drawing.Size(343, 340);
+            this.dtgvAccount.TabIndex = 0;
+            this.dtgvAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAccount_CellContentClick);
+            // 
             // tpTable
             // 
             this.tpTable.Controls.Add(this.panel11);
@@ -385,7 +394,7 @@
             this.tpTable.Location = new System.Drawing.Point(4, 24);
             this.tpTable.Name = "tpTable";
             this.tpTable.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTable.Size = new System.Drawing.Size(650, 411);
+            this.tpTable.Size = new System.Drawing.Size(712, 411);
             this.tpTable.TabIndex = 3;
             this.tpTable.Text = "Bàn ăn";
             this.tpTable.UseVisualStyleBackColor = true;
@@ -574,7 +583,7 @@
             this.tbFoodCategory.Location = new System.Drawing.Point(4, 24);
             this.tbFoodCategory.Name = "tbFoodCategory";
             this.tbFoodCategory.Padding = new System.Windows.Forms.Padding(3);
-            this.tbFoodCategory.Size = new System.Drawing.Size(650, 411);
+            this.tbFoodCategory.Size = new System.Drawing.Size(712, 411);
             this.tbFoodCategory.TabIndex = 2;
             this.tbFoodCategory.Text = "Danh mục";
             this.tbFoodCategory.UseVisualStyleBackColor = true;
@@ -730,7 +739,7 @@
             this.tpFood.Location = new System.Drawing.Point(4, 24);
             this.tpFood.Name = "tpFood";
             this.tpFood.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFood.Size = new System.Drawing.Size(650, 411);
+            this.tpFood.Size = new System.Drawing.Size(712, 411);
             this.tpFood.TabIndex = 1;
             this.tpFood.Text = "Thức ăn";
             this.tpFood.UseVisualStyleBackColor = true;
@@ -971,7 +980,7 @@
             this.tpBill.Location = new System.Drawing.Point(4, 24);
             this.tpBill.Name = "tpBill";
             this.tpBill.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBill.Size = new System.Drawing.Size(650, 411);
+            this.tpBill.Size = new System.Drawing.Size(712, 411);
             this.tpBill.TabIndex = 0;
             this.tpBill.Text = "Doanh thu";
             this.tpBill.UseVisualStyleBackColor = true;
@@ -1012,6 +1021,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel22);
             this.panel1.Controls.Add(this.txbPageBill);
             this.panel1.Controls.Add(this.btnNextBillPage);
             this.panel1.Controls.Add(this.btnPrevioursBillPage);
@@ -1020,12 +1030,21 @@
             this.panel1.Controls.Add(this.dtgvBill);
             this.panel1.Location = new System.Drawing.Point(6, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(638, 369);
+            this.panel1.Size = new System.Drawing.Size(704, 369);
             this.panel1.TabIndex = 0;
+            // 
+            // panel22
+            // 
+            this.panel22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel22.BackgroundImage")));
+            this.panel22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel22.Location = new System.Drawing.Point(513, 3);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(188, 333);
+            this.panel22.TabIndex = 6;
             // 
             // txbPageBill
             // 
-            this.txbPageBill.Location = new System.Drawing.Point(282, 343);
+            this.txbPageBill.Location = new System.Drawing.Point(215, 346);
             this.txbPageBill.Name = "txbPageBill";
             this.txbPageBill.ReadOnly = true;
             this.txbPageBill.Size = new System.Drawing.Size(75, 21);
@@ -1036,7 +1055,7 @@
             // 
             // btnNextBillPage
             // 
-            this.btnNextBillPage.Location = new System.Drawing.Point(479, 343);
+            this.btnNextBillPage.Location = new System.Drawing.Point(352, 342);
             this.btnNextBillPage.Name = "btnNextBillPage";
             this.btnNextBillPage.Size = new System.Drawing.Size(75, 23);
             this.btnNextBillPage.TabIndex = 4;
@@ -1056,7 +1075,7 @@
             // 
             // btnLastBillPage
             // 
-            this.btnLastBillPage.Location = new System.Drawing.Point(560, 344);
+            this.btnLastBillPage.Location = new System.Drawing.Point(436, 342);
             this.btnLastBillPage.Name = "btnLastBillPage";
             this.btnLastBillPage.Size = new System.Drawing.Size(75, 23);
             this.btnLastBillPage.TabIndex = 2;
@@ -1081,7 +1100,7 @@
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvBill.Location = new System.Drawing.Point(3, 3);
             this.dtgvBill.Name = "dtgvBill";
-            this.dtgvBill.Size = new System.Drawing.Size(632, 335);
+            this.dtgvBill.Size = new System.Drawing.Size(508, 333);
             this.dtgvBill.TabIndex = 0;
             this.dtgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvBill_CellContentClick);
             // 
@@ -1092,60 +1111,79 @@
             this.tcAdmin.Controls.Add(this.tbFoodCategory);
             this.tcAdmin.Controls.Add(this.tpTable);
             this.tcAdmin.Controls.Add(this.tpAccount);
-            this.tcAdmin.Controls.Add(this.tabPage1);
+            this.tcAdmin.Controls.Add(this.tabPage2);
             this.tcAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcAdmin.Location = new System.Drawing.Point(12, 12);
             this.tcAdmin.Name = "tcAdmin";
             this.tcAdmin.SelectedIndex = 0;
-            this.tcAdmin.Size = new System.Drawing.Size(658, 439);
+            this.tcAdmin.Size = new System.Drawing.Size(720, 439);
             this.tcAdmin.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPage2
             // 
-            this.tabPage1.Controls.Add(this.rpViewer);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(650, 411);
-            this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "Report";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.reportViewer1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(712, 411);
+            this.tabPage2.TabIndex = 6;
+            this.tabPage2.Text = "Xuất báo cáo ";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // rpViewer
+            // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.USP_GetListBillByDateForReportBindingSource;
-            this.rpViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.rpViewer.LocalReport.ReportEmbeddedResource = "QuanLyQuanCafe.Report2.rdlc";
-            this.rpViewer.Location = new System.Drawing.Point(0, 0);
-            this.rpViewer.Name = "rpViewer";
-            this.rpViewer.Size = new System.Drawing.Size(650, 417);
-            this.rpViewer.TabIndex = 0;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.USP_GetListBillByDateForReportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLyQuanCafe.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(706, 405);
+            this.reportViewer1.TabIndex = 0;
             // 
-            // USP_GetListBillByDateForReportTableAdapter
+            // QuanLyQuanCafeDataSet
             // 
-            this.USP_GetListBillByDateForReportTableAdapter.ClearBeforeFill = true;
+            this.QuanLyQuanCafeDataSet.DataSetName = "QuanLyQuanCafeDataSet";
+            this.QuanLyQuanCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dtgvAccount
+            // panel24
             // 
-            this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvAccount.Location = new System.Drawing.Point(3, 0);
-            this.dtgvAccount.Name = "dtgvAccount";
-            this.dtgvAccount.Size = new System.Drawing.Size(343, 340);
-            this.dtgvAccount.TabIndex = 0;
+            this.panel24.Controls.Add(this.txtPass);
+            this.panel24.Controls.Add(this.label10);
+            this.panel24.Location = new System.Drawing.Point(3, 152);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(279, 44);
+            this.panel24.TabIndex = 5;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(127, 8);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(149, 21);
+            this.txtPass.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.Location = new System.Drawing.Point(3, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(121, 19);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Mật khẩu mới :";
             // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 463);
+            this.ClientSize = new System.Drawing.Size(736, 463);
             this.Controls.Add(this.tcAdmin);
             this.Name = "frmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.fAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillByDateForReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet2)).EndInit();
             this.tpAccount.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
@@ -1157,6 +1195,7 @@
             this.panel27.PerformLayout();
             this.panel28.ResumeLayout(false);
             this.panel29.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.tpTable.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
@@ -1199,14 +1238,20 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.tcAdmin.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).EndInit();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.BindingSource USP_GetTableListBindingSource;
+        private System.Windows.Forms.BindingSource USP_GetListBillByDateForReportBindingSource;
+        private QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter USP_GetListBillByDateForReportTableAdapter;
+        //private QuanLyQuanCafe.QuanLyQuanCafeDataSet1 QuanLyQuanCafeDataSet1;
         private System.Windows.Forms.TabPage tpAccount;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Button btnResetPassword;
@@ -1225,6 +1270,7 @@
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Panel panel29;
+        private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.TabPage tpTable;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel21;
@@ -1295,13 +1341,14 @@
         private System.Windows.Forms.Button btnFristBillPage;
         private System.Windows.Forms.DataGridView dtgvBill;
         private System.Windows.Forms.TabControl tcAdmin;
-        private System.Windows.Forms.TabPage tabPage1;
-        private Microsoft.Reporting.WinForms.ReportViewer rpViewer;
-        private System.Windows.Forms.BindingSource USP_GetTableListBindingSource;
-        private System.Windows.Forms.BindingSource USP_GetListBillByDateForReportBindingSource;
-        private QuanLyQuanCafeDataSet2 QuanLyQuanCafeDataSet2;
-        private QuanLyQuanCafeDataSet2TableAdapters.USP_GetListBillByDateForReportTableAdapter USP_GetListBillByDateForReportTableAdapter;
-        private System.Windows.Forms.DataGridView dtgvAccount;
+        private System.Windows.Forms.TabPage tabPage2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private QuanLyQuanCafeDataSet QuanLyQuanCafeDataSet;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label label10;
+       // private QuanLyQuanCafe.QuanLyQuanCafeDataSet1 QuanLyQuanCafeDataSet1;
 
     }
 }

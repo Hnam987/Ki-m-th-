@@ -90,9 +90,10 @@ namespace QuanLyQuanCafe.DAO
             return result > 0;
         }
 
-        public bool ResetPassword(string name)
+        public bool ResetPassword(string name,string pass)
         {
-            string query = string.Format("update account set password = N'1962026656160185351301320480154111117132155' where UserName = N'{0}'", name);
+            //string query = string.Format("update account set password = N'1962026656160185351301320480154111117132155' where UserName = N'{0}'", name);
+            string query = string.Format("update account set password =" + pass+ " where UserName = N'{0}'", name);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;

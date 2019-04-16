@@ -122,21 +122,11 @@
 DECLARE @RC AS INT, @userName AS NVARCHAR (100);
 
 SELECT @RC = 0,
-       @userName = NULL;
+       @userName = 'K9' --@userName ='staff';
 
-EXECUTE @RC = [dbo].[USP_GetAccountByUserName] @userName = N'K9'  ;
-EXECUTE @RC = [dbo].[USP_GetAccountByUserName] @userName = N'staff';
+EXECUTE @RC = [dbo].[USP_GetAccountByUserName] @userName;
 
---Data Checksum: fail nếu giá trị checksum của kết quả trả về khác với giá trị checksum mong đợi.
---Empty Resultset: fail nếu result set trả về khác rỗng.
---Execution Time: fail nếu thời gian thực thi dài hơn thời gian mong muốn.
---Expected Schema: fail nếu các cột và các kiểu dữ liệu của result set không khớp
---với điều kiện test chỉ định.
- --Not Empty Result ResultSet: Fail nếu kết quả result set là rỗng.
---Row Count: fail nếu số lượng dòng kết quả trả về không đúng số lượng mong
---muốn.
---Scalar Value: fail nếu một giá trị chỉ định trong result set khác với một giá trị
---mong muốn.
+SELECT @RC AS RC;
 
 </value>
   </data>

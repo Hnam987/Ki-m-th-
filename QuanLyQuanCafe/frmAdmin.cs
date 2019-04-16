@@ -166,9 +166,9 @@ namespace QuanLyQuanCafe
             LoadAccount();
         }
 
-        void ResetPass(string userName)
+        void ResetPass(string userName, string pass)
         {
-            if (AccountDAO.Instance.ResetPassword(userName))
+            if (AccountDAO.Instance.ResetPassword(userName,pass))
             {
                 MessageBox.Show("Đặt lại mật khẩu thành công");
             }
@@ -209,7 +209,8 @@ namespace QuanLyQuanCafe
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
             string userName = txbUserName.Text;
-            ResetPass(userName);
+            string pass = txtPass.Text;
+            ResetPass(userName,pass);
         }
 
 
@@ -421,9 +422,10 @@ namespace QuanLyQuanCafe
         private void fAdmin_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport' table. You can move, or remove it, as needed.
-            this.USP_GetListBillByDateForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet2.USP_GetListBillByDateForReport, dtpkFromDate.Value, dtpkToDate.Value);           
 
-            this.rpViewer.RefreshReport();
+           // this.USP_GetListBillByDateForReportTableAdapter.Fill(this.QuanLyQuanCafeDataSet.USP_GetListBillByDateForReport, dtpkFromDate.Value, dtpkToDate.Value);
+           
+            //this.reportViewer1.RefreshReport();
         }
 
         private void btnShowTable_Click(object sender, EventArgs e)
@@ -583,6 +585,11 @@ namespace QuanLyQuanCafe
         }
 
         private void panel23_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dtgvAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

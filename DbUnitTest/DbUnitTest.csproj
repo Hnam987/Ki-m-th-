@@ -55,13 +55,7 @@
     <Compile Include="SqlServerLogin.cs">
       <SubType>Designer</SubType>
     </Compile>
-    <Compile Include="SqlServerUnitTestGetByAccountByUser.cs">
-      <SubType>Designer</SubType>
-    </Compile>
-    <Compile Include="SqlServerUnitTestInsertBill.cs">
-      <SubType>Designer</SubType>
-    </Compile>
-    <Compile Include="SqlServerUnitTestInsertBillInfo.cs">
+    <Compile Include="SqlServerUnitTestGetAccountByuserName.cs">
       <SubType>Designer</SubType>
     </Compile>
     <Compile Include="SqlServerUnitTestUSP_GetListBillByDateAndPage_1.cs">
@@ -86,14 +80,8 @@
     <EmbeddedResource Include="SqlServerLogin.resx">
       <DependentUpon>SqlServerLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SqlServerUnitTestGetByAccountByUser.resx">
-      <DependentUpon>SqlServerUnitTestGetByAccountByUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SqlServerUnitTestInsertBill.resx">
-      <DependentUpon>SqlServerUnitTestInsertBill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SqlServerUnitTestInsertBillInfo.resx">
-      <DependentUpon>SqlServerUnitTestInsertBillInfo.cs</DependentUpon>
+    <EmbeddedResource Include="SqlServerUnitTestGetAccountByuserName.resx">
+      <DependentUpon>SqlServerUnitTestGetAccountByuserName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SqlServerUnitTestUSP_GetListBillByDateAndPage_1.resx">
       <DependentUpon>SqlServerUnitTestUSP_GetListBillByDateAndPage_1.cs</DependentUpon>

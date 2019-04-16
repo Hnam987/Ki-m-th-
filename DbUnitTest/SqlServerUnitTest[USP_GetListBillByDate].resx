@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="checksumCondition1.Configuration" xml:space="preserve">
+    <value>Press to configure</value>
+  </metadata>
   <data name="dbo_USP_GetListBillByDateTest_TestAction.SqlScript" xml:space="preserve">
     <value>-- database unit test for dbo.USP_GetListBillByDate
 DECLARE @RC AS INT, @checkIn AS DATE, @checkOut AS DATE;

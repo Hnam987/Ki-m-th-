@@ -42,7 +42,7 @@ namespace QuanLyQuanCafe.DAO
         {
             List<Food> list = new List<Food>();
 
-            string query = "select * from Food";
+            string query = "Select *from dbo.Food";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 

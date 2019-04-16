@@ -26,6 +26,20 @@ namespace UnitTestCode
             //login = new frmLogin();
             AccountDAO.Instance.Login("K9", "12"); /// user , pass k đúng 
         }// tên đăng nhập đúng , mật khẩu sai
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void TestSignIn_False_NullTk()
+        {
+            //login = new frmLogin();
+            AccountDAO.Instance.Login("", "1"); /// user , pass k đúng 
+        }// tên đăng nhập null , k mật khẩu
+        [TestMethod]
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        public void TestSignIn_False_PassNULL()
+        {
+            //login = new frmLogin();
+            AccountDAO.Instance.Login("K9", ""); /// user , pass k đúng 
+        }// tên đăng nhập đúng , k mật khẩu
 
         [TestMethod]
         [ExpectedException(typeof(IndexOutOfRangeException))]

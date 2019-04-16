@@ -60,12 +60,6 @@ namespace DbUnitTest
             rowCountCondition1.ResultSet = 1;
             rowCountCondition1.RowCount = 2;
             // 
-            // dbo_USP_Login1TestData
-            // 
-            this.dbo_USP_Login1TestData.PosttestAction = null;
-            this.dbo_USP_Login1TestData.PretestAction = dbo_USP_Login1Test_PretestAction;
-            this.dbo_USP_Login1TestData.TestAction = dbo_USP_Login1Test_TestAction;
-            // 
             // dbo_USP_Login1Test_PretestAction
             // 
             dbo_USP_Login1Test_PretestAction.Conditions.Add(rowCountCondition2);
@@ -77,6 +71,12 @@ namespace DbUnitTest
             rowCountCondition2.Name = "rowCountCondition2";
             rowCountCondition2.ResultSet = 1;
             rowCountCondition2.RowCount = 1;
+            // 
+            // dbo_USP_Login1TestData
+            // 
+            this.dbo_USP_Login1TestData.PosttestAction = null;
+            this.dbo_USP_Login1TestData.PretestAction = dbo_USP_Login1Test_PretestAction;
+            this.dbo_USP_Login1TestData.TestAction = dbo_USP_Login1Test_TestAction;
         }
 
         #endregion
